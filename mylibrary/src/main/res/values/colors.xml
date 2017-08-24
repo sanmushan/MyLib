@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_50">#50ffffff</color>
+    <color name="white_80">#80ffffff</color>
+    <color name="white_90">#90ffffff</color>
+
+    <color name="black">#000000</color>
+    <color name="black_50">#50000000</color>
+    <color name="black_80">#80000000</color>
+    <color name="black_90">#90000000</color>
+
+    <color name="font_3">#333333</color><!-- 一级字体颜色 -->
+    <color name="font_6">#666666</color><!-- 二级字体颜色 -->
+    <color name="font_9">#999999</color><!-- 三级字体颜色 -->
+    <color name="font_a">#AAAAAA</color><!-- 四级字体颜色 -->
+
+    <color name="bg_f2">#f2f2f2</color>
+    <color name="bg_f4">#f6f6f6</color>
+    <color name="bg_e8">#e8e8e8</color>
+
+    <color name="line_d2">#d2d2d2</color>
+    <color name="line_d4">#d4d4d4</color>
+
+    <!-- 蓝色 -->
+    <color name="blue">#00a2ff</color>
+    <color name="blue_50">#5000a2ff</color>
+    <color name="orange">#ff942c</color>
+    <color name="orange_50">#50ff942c</color>
+    <color name="orange2">#ff342c</color>
+    <color name="green">#18ff00</color>
+    <color name="green_01">#33CC00</color>
+
+    <!-- 红色 -->
+    <color name="red">#F04848</color>
+    <color name="red_50">#F04848</color>
+
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+
+
+</resources>

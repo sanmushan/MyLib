@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">My Library</string>
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+    <!-- 通用字符串 -->
+    <string name="common_text_cancel">取消</string>
+    <string name="common_text_sure">确定</string>
+
+    <!-- 网络请求错误 -->
+    <string name="common_text_error_net">网络连接好像出了点问题</string>
+    <string name="common_text_client_error">客户端出错</string>
+    <string name="common_text_server_error">服务端出错</string>
+    <string name="common_loading_no_data">暂无数据！</string>
+    <string name="common_loading_data">玩命加载中...</string>
+    <string name="common_loading_finish">已全部加载完成</string>
+    <string name="common_loading_error">网络错误,点击重新加载</string>
+    <string name="common_loading_click_refresh"><u>点击刷新</u></string>
+    <string name="common_text_refresh_failed">刷新失败</string>
+
+    <!-- 刷新加载 -->
+    <string name="pull_to_refresh_pull_label">下拉刷新…</string>
+    <string name="pull_to_refresh_release_label">释放刷新…</string>
+    <string name="pull_to_refresh_refreshing_label">刷新中…</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">上拉加载更多…</string>
+    <string name="pull_to_refresh_from_bottom_release_label">释放加载更多…</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">加载中…</string>
+
+    <!--Zxing-->
+    <string name="scan_text_sys">将二维码放入框内, 即可自动扫描</string>
+</resources>

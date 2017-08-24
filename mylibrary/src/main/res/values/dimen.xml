@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="title_height">48dp</dimen>
+    <dimen name="title_textSize">20sp</dimen>
+    <dimen name="top_tab_height">48dp</dimen>
+    <dimen name="top_tab_textSize">14sp</dimen>
+
+    <!-- 普通文本按钮的高度 -->
+    <dimen name="common_tv_height">32dp</dimen>
+    <!-- 普通按钮的高度 -->
+    <dimen name="common_btn_height">45dp</dimen>
+
+    <!-- 通用字体大小 -->
+    <!-- 超级字号，一般用于最大标题 -->
+    <dimen name="common_22">22dp</dimen>
+    <!-- 稍大字号，一般用于用户输入 -->
+    <dimen name="common_18">18dp</dimen>
+    <!-- 大字号，一般用于一级标题 -->
+    <dimen name="common_16">16dp</dimen>
+    <!-- 中字号，一般用于二级标题 -->
+    <dimen name="common_14">14dp</dimen>
+    <!-- 小字号，一般用于三级标题，介绍性文字 -->
+    <dimen name="common_13">13dp</dimen>
+    <!-- 超小字号 -->
+    <dimen name="common_12">12dp</dimen>
+    <!-- 最小字号 -->
+    <dimen name="common_10">10dp</dimen>
+
+</resources>

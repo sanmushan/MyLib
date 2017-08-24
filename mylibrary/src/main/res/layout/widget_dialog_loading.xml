@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:background="@drawable/rrect_black"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <com.mylibrary.widget.ProgressBarCircular
+        android:id="@+id/pb_loading"
+        android:background="@color/white"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:id="@+id/tv_loading"
+        android:text="请稍后"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
+</LinearLayout>
