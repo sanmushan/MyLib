@@ -2,20 +2,18 @@ package com.example.pver.mylib;
 
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
+import android.view.View;
 import android.widget.CompoundButton;
 
 import com.mylibrary.swipeback.BaseActivity;
 
+
 public class SwipeBackTwoActivity extends BaseActivity {
     private SwitchCompat mSwipeBackEnableSwitch;
-
-
-
 
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_swipe_back_two);
-        mSwipeBackEnableSwitch = getViewById(R.id.swipeBackEnableSwitch);
     }
 
     @Override
@@ -25,7 +23,13 @@ public class SwipeBackTwoActivity extends BaseActivity {
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
+        initToolbar();
+    }
 
+    private void initToolbar() {
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("测试滑动返回布局的接口");
     }
 
     /**
@@ -87,4 +91,23 @@ public class SwipeBackTwoActivity extends BaseActivity {
             }
         });
     }
+
+    public void testTranslucent(View v) {
+//        mSwipeBackHelper.forward(TranslucentActivity.class);---
+
+//        mSwipeBackHelper.forwardAndFinish(TranslucentActivity.class);
+    }
+
+    public void testPullRefreshAndWebView(View v) {
+//        mSwipeBackHelper.forward(WebViewActivity.class);
+    }
+
+    public void testSwipeDelete(View v) {
+//        mSwipeBackHelper.forward(SwipeDeleteActivity.class);
+    }
+
+    public void testRecyclerView(View v) {
+//        mSwipeBackHelper.forward(RecyclerIndexActivity.class);
+    }
+
 }

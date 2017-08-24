@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class MainActivity extends AfinalActivity implements View.OnClickListener{
+public class MainActivity extends AfinalActivity implements View.OnClickListener {
     ScanActivity.ScanCallback scanCallback;
     private BaseTitleBar baseTitleBar;
 
@@ -39,15 +39,15 @@ public class MainActivity extends AfinalActivity implements View.OnClickListener
         tx_01.setOnClickListener(new View.OnClickListener() {//侧滑返回
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(MainActivity.this,MySwipeBackActivity.class);
+                Intent in = new Intent(MainActivity.this, MySwipeBackActivity.class);
                 startActivity(in);
             }
         });
         tx_02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(MainActivity.this,SwipeBackTwoActivity.class);
-                startActivity(in);
+//                Intent in = new Intent(MainActivity.this, SwipeBackTwoActivity.class);
+//                startActivity(in);
             }
         });
         todayIncome();
@@ -55,7 +55,7 @@ public class MainActivity extends AfinalActivity implements View.OnClickListener
 
     private void todayIncome() {
         Map map = new HashMap();
-        Http.post(this,map, "http://db.0085.com/logisticsController/getTodayDeliveryPay", new HttpCallback<DeliveryTodayPayInfo.ResponseEntity.DatasEntity>() {
+        Http.post(this, map, "http://db.0085.com/logisticsController/getTodayDeliveryPay", new HttpCallback<DeliveryTodayPayInfo.ResponseEntity.DatasEntity>() {
             @Override
             public void onSuccess(DeliveryTodayPayInfo.ResponseEntity.DatasEntity data) {
             }

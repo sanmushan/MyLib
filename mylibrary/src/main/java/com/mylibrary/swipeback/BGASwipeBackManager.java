@@ -11,17 +11,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.view.View;
 
-
-
 import java.util.Collection;
 import java.util.Stack;
+
 
 /**
  * 作者:王浩 邮件:bingoogolapple@gmail.com
  * 创建时间:16/12/28 下午11:42
  * 描述:
  */
- class BGASwipeBackManager implements Application.ActivityLifecycleCallbacks {
+class BGASwipeBackManager implements Application.ActivityLifecycleCallbacks {
     private static final BGASwipeBackManager sInstance = new BGASwipeBackManager();
     private Stack<Activity> mActivityStack = new Stack<>();
 

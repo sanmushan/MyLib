@@ -71,7 +71,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MySwipeBackActivity" />
+        <activity android:name=".MySwipeBackActivity"
+            android:screenOrientation="portrait"
+            android:windowBackground="@android:color/transparent"
+            android:windowIsTranslucent="true"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity
             android:name=".zxing.ScanActivity"
             android:screenOrientation="portrait" />
