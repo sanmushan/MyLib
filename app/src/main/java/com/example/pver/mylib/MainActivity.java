@@ -1,10 +1,12 @@
 package com.example.pver.mylib;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pver.mylib.bean.DeliveryTodayPayInfo;
 import com.example.pver.mylib.bean.WeChatInfo;
@@ -34,8 +36,11 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-
+/**
+ * @author lin
+ */
 public class MainActivity extends AfinalActivity implements View.OnClickListener {
+    private static final String TAG = "MainActivity";
     ScanActivity.ScanCallback scanCallback;
     private BaseTitleBar baseTitleBar;
     String  courierURL = "http://db.0085.com/logisticsController/getTodayDeliveryPay";
@@ -72,11 +77,10 @@ public class MainActivity extends AfinalActivity implements View.OnClickListener
             }
         });
 
-//        todayIncome();
         data();
-//        getData();
-//        dataOK();
+
     }
+
 
     private void dataOK() {
         String url = "http://v.juhe.cn/weixin/query?pno=1&ps=3&dtype=&key=b920149721e049c80bcc4897f50f3f52";
@@ -161,7 +165,6 @@ public class MainActivity extends AfinalActivity implements View.OnClickListener
             public void onResponse(Call call, Response response) throws IOException {
                 final String str = response.body().string();
                 Log.e("http : ", "http://v.juhe.cn/weixin/query?pno=1&ps=1&dtype=&key=b920149721e049c80bcc4897f50f3f52");
-//                Log.d("JSON : ", str);
                 Gson gson = new Gson();
                 final WeChatInfo.ResultEntity.ListEntity info = gson.fromJson(str, WeChatInfo.ResultEntity.ListEntity.class);
                 Log.d("JSON : ", ""+info.getId());
