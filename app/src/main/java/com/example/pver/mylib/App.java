@@ -9,7 +9,10 @@ import android.os.Looper;
 
 import com.mylibrary.AfinalActivity;
 import com.mylibrary.http.Http;
+import com.mylibrary.http.HttpsUtils;
+import com.mylibrary.http.OkHttpUtils;
 import com.mylibrary.loading.LoadingView;
+import com.mylibrary.log.LoggerInterceptor;
 import com.mylibrary.widget.bar.BaseTitleBar;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
@@ -23,7 +26,12 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
+
+import okhttp3.OkHttpClient;
 
 
 /**
@@ -60,6 +68,10 @@ public class App extends Application {
         //极光初始化
 //        JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
 //        JPushInterface.init(this);     		// 初始化 JPush
+
+
+
+
     }
 
     // 皮肤相关
@@ -80,6 +92,27 @@ public class App extends Application {
 //        SearchTitleBar.search_left_img_resid = R.drawable.ico_seek;
 //        SearchTitleBar.search_btn_x_resid = R.drawable.ico_search_close;
 //        SearchTitleBar.search_edittext_bg_resid = R.drawable.bg_et_search;
+        http();
+    }
+
+    private void http() {
+        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+                .readTimeout(10000L, TimeUnit.MILLISECONDS)
+                .addInterceptor(new LoggerInterceptor("TAG"))
+                .hostnameVerifier(new HostnameVerifier()
+                {
+                    @Override
+                    public boolean verify(String hostname, SSLSession session)
+                    {
+                        return true;
+                    }
+                })
+                .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
+                .build();
+        OkHttpUtils.initClient(okHttpClient);
     }
 
     /**

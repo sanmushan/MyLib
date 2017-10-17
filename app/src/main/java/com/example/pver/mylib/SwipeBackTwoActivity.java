@@ -2,112 +2,33 @@ package com.example.pver.mylib;
 
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
-import android.view.View;
 import android.widget.CompoundButton;
 
-import com.mylibrary.swipeback.BaseActivity;
+import com.mylibrary.swipeback.SwipeBackActivity;
 
 
-public class SwipeBackTwoActivity extends BaseActivity {
-    private SwitchCompat mSwipeBackEnableSwitch;
+public class SwipeBackTwoActivity extends SwipeBackActivity {
+    SwitchCompat compat;
 
     @Override
-    protected void initView(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipe_back_two);
+        compat = (SwitchCompat) findViewById(R.id.onlyTrackingLeftEdgeSwitch);
+        initView();
     }
 
-    @Override
-    protected void setListener() {
-        testSwipeBackLayout();
-    }
-
-    @Override
-    protected void processLogic(Bundle savedInstanceState) {
-        initToolbar();
-    }
-
-    private void initToolbar() {
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("测试滑动返回布局的接口");
-    }
-
-    /**
-     * 测试滑动返回相关接口
-     */
-    private void testSwipeBackLayout() {
-        // 测试动态设置滑动返回是否可用
-        mSwipeBackEnableSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean swipeBackEnable) {
-                /**
-                 * 设置滑动返回是否可用
-                 */
-                mSwipeBackHelper.setSwipeBackEnable(swipeBackEnable);
-            }
-        });
-
+    private void initView() {
         // 测试动态设置是否仅仅跟踪左侧边缘的滑动返回
-        ((SwitchCompat) getViewById(R.id.onlyTrackingLeftEdgeSwitch)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        compat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isOnlyTrackingLeftEdge) {
                 /**
                  * 设置是否仅仅跟踪左侧边缘的滑动返回
                  */
-                mSwipeBackHelper.setIsOnlyTrackingLeftEdge(isOnlyTrackingLeftEdge);
+//                mSwipeBackHelper.setIsOnlyTrackingLeftEdge(isOnlyTrackingLeftEdge);
             }
         });
-
-        // 测试动态设置是否是微信滑动返回样式
-        ((SwitchCompat) getViewById(R.id.weChatStyleSwitch)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isWeChatStyle) {
-                /**
-                 * 设置是否是微信滑动返回样式
-                 */
-                mSwipeBackHelper.setIsWeChatStyle(isWeChatStyle);
-            }
-        });
-
-        // 测试动态设置是否显示滑动返回的阴影效果
-        ((SwitchCompat) getViewById(R.id.needShowShadowSwitch)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isNeedShowShadow) {
-                /**
-                 * 设置是否显示滑动返回的阴影效果
-                 */
-                mSwipeBackHelper.setIsNeedShowShadow(isNeedShowShadow);
-            }
-        });
-
-        // 测试动态设置阴影区域的透明度是否根据滑动的距离渐变
-        ((SwitchCompat) getViewById(R.id.shadowAlphaGradientSwitch)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isShadowAlphaGradient) {
-                /**
-                 * 设置阴影区域的透明度是否根据滑动的距离渐变
-                 */
-                mSwipeBackHelper.setIsShadowAlphaGradient(isShadowAlphaGradient);
-            }
-        });
-    }
-
-    public void testTranslucent(View v) {
-//        mSwipeBackHelper.forward(TranslucentActivity.class);---
-
-//        mSwipeBackHelper.forwardAndFinish(TranslucentActivity.class);
-    }
-
-    public void testPullRefreshAndWebView(View v) {
-//        mSwipeBackHelper.forward(WebViewActivity.class);
-    }
-
-    public void testSwipeDelete(View v) {
-//        mSwipeBackHelper.forward(SwipeDeleteActivity.class);
-    }
-
-    public void testRecyclerView(View v) {
-//        mSwipeBackHelper.forward(RecyclerIndexActivity.class);
     }
 
 }
